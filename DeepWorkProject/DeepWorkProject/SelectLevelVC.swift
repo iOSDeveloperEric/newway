@@ -9,21 +9,23 @@ import UIKit
 
 class SelectLevelVC: UIViewController {
 
+    @IBOutlet weak var btnBegginer: UIButton!
+    @IBOutlet weak var btnIntermediat: UIButton!
+    @IBOutlet weak var btnExpert: UIButton!
+    @IBOutlet weak var btnStartClasses: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        btnExpert.cornerRadiusCustom()
+        btnIntermediat.cornerRadiusCustom()
+        btnBegginer.cornerRadiusCustom()
+        btnStartClasses.cornerRadiusCustom()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func btnStartClasses(_ sender: Any) {
+        let pathTo = UIStoryboard.init(name: "Main", bundle: Bundle.main)
+        let vc = pathTo.instantiateViewController(withIdentifier: "TabViewVC") as? TabViewVC
+        self.navigationController?.pushViewController(vc!, animated: true)
     }
-    */
-
 }

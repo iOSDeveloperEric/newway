@@ -6,3 +6,15 @@
 //
 
 import Foundation
+import UIKit
+
+
+extension UIButton {
+
+    func cornerRadiusCustom (){
+        layer.cornerRadius = layer.frame.height / 2
+        layer.borderWidth = 1
+        layer.borderColor = UIColor.purple.cgColor
+    }
+    
+}

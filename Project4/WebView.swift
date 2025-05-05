@@ -6,24 +6,137 @@
 //
 
 import UIKit
+import WebKit
+ 
 
-class WebView: UIViewController {
+class WebView: UIViewController, WKNavigationDelegate {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    @objc var webView: WKWebView!
+    let containerView = UIView()
+    var progressView: UIProgressView!
+    var websites = ""
+    
+    override func loadView() {
+        containerView.backgroundColor = .lightGray
+        
+        webView = WKWebView()
+        webView.translatesAutoresizingMaskIntoConstraints = false
+        containerView.addSubview(webView)
+        
+        NSLayoutConstraint.activate([
+            webView.topAnchor.constraint(equalTo: containerView.safeAreaLayoutGuide.topAnchor),
+            webView.bottomAnchor.constraint(equalTo: containerView.safeAreaLayoutGuide.bottomAnchor),
+            webView.leadingAnchor.constraint(equalTo: containerView.safeAreaLayoutGuide.leadingAnchor),
+            webView.trailingAnchor.constraint(equalTo: containerView.safeAreaLayoutGuide.trailingAnchor)
+        ])
+        
+        webView.navigationDelegate = self
+        self.view = containerView
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let refresh = UIBarButtonItem(barButtonSystemItem: .refresh, target: webView, action: #selector(webView.reload))
+        
+        let backButton = UIBarButtonItem(title: "Back", style: .done, target: self, action: #selector(webView.goBack))
+        let forwardButton = UIBarButtonItem(title: "Forward", style: .done, target: self, action: #selector(webView.goForward))
+        
+        progressView = UIProgressView(progressViewStyle: .default)
+        progressView.sizeToFit()
+        let progressBar = UIBarButtonItem(customView: progressView)
+        
+        toolbarItems = [backButton, progressBar, spacer, refresh, forwardButton]
+        navigationController?.isToolbarHidden = false
+        
+        webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
+        
+        
+        let url = URL(string: "https://" + websites)!
+        webView.load(URLRequest(url: url))
+        webView.allowsBackForwardNavigationGestures = true
     }
-    */
+    
+    
+    @objc func openTapped(){
+        let ac = UIAlertController(title: "Open Page...", message: nil, preferredStyle: .actionSheet)
 
+            ac.addAction(UIAlertAction(title: websites, style: .default, handler: openPage))
+
+        
+        ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        
+        ac.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+        
+        present(ac, animated: true)
+    }
+
+    
+    func openPage(action: UIAlertAction){
+        guard let actionTitle = action.title else {return}
+        var checkUrl = "https://" + actionTitle
+        if canOpenURL(checkUrl) {
+            print("valid url.")
+            guard let url = URL(string: checkUrl) else {return}
+            webView.load(URLRequest(url: url))
+        } else {
+            print("invalid url.") // This line executes
+            showInvalidWebsiteAlert()
+        }
+    }
+    
+    
+    func canOpenURL(_ string: String?) -> Bool {
+        guard let urlString = string,
+            let url = URL(string: urlString)
+            else { return false }
+
+        if !UIApplication.shared.canOpenURL(url) { return false }
+
+        let regEx = "((https|http)://)((\\w|-)+)(([.]|[/])((\\w|-)+))+"
+        let predicate = NSPredicate(format:"SELF MATCHES %@", argumentArray:[regEx])
+        return predicate.evaluate(with: string)
+    }
+    
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        title = webView.title
+    }
+    
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == "estimatedProgress" {
+            progressView.progress = Float(webView.estimatedProgress)
+        }
+    }
+    
+    
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        let url = navigationAction.request.url
+        
+        if let host = url?.host {
+                if host.contains(websites){
+                    decisionHandler(.allow)
+                    return
+            }
+        }
+        decisionHandler(.cancel)
+        
+    }
+    
+    
+    func showInvalidWebsiteAlert() {
+        let alert = UIAlertController(title: "Blocked",
+                                      message: "This website is not allowed.",
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+
+        // Present the alert on the main thread
+        DispatchQueue.main.async {
+            self.present(alert, animated: true)
+        }
+    }
 }

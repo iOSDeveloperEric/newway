@@ -7,23 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD7125FF2DB8E6CB0008E3CC /* TabViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7125FE2DB8E6CB0008E3CC /* TabViewVC.swift */; };
 		CDF7F9AB2DB86721001AC29C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF7F9AA2DB86721001AC29C /* AppDelegate.swift */; };
 		CDF7F9AD2DB86721001AC29C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF7F9AC2DB86721001AC29C /* SceneDelegate.swift */; };
-		CDF7F9AF2DB86721001AC29C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF7F9AE2DB86721001AC29C /* ViewController.swift */; };
+		CDF7F9AF2DB86721001AC29C /* InitialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF7F9AE2DB86721001AC29C /* InitialVC.swift */; };
 		CDF7F9B22DB86721001AC29C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDF7F9B02DB86721001AC29C /* Main.storyboard */; };
 		CDF7F9B42DB86722001AC29C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDF7F9B32DB86722001AC29C /* Assets.xcassets */; };
 		CDF7F9B72DB86722001AC29C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDF7F9B52DB86722001AC29C /* LaunchScreen.storyboard */; };
+		CDF7F9BF2DB86BC7001AC29C /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF7F9BE2DB86BC7001AC29C /* LoginVC.swift */; };
+		CDF7F9C12DB87D5A001AC29C /* SelectLevelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF7F9C02DB87D5A001AC29C /* SelectLevelVC.swift */; };
+		CDF7F9C32DB87EA7001AC29C /* UIButton+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF7F9C22DB87EA7001AC29C /* UIButton+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CD7125FE2DB8E6CB0008E3CC /* TabViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewVC.swift; sourceTree = "<group>"; };
 		CDF7F9A72DB86721001AC29C /* DeepWorkProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeepWorkProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDF7F9AA2DB86721001AC29C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CDF7F9AC2DB86721001AC29C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CDF7F9AE2DB86721001AC29C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CDF7F9AE2DB86721001AC29C /* InitialVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialVC.swift; sourceTree = "<group>"; };
 		CDF7F9B12DB86721001AC29C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CDF7F9B32DB86722001AC29C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CDF7F9B62DB86722001AC29C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CDF7F9B82DB86722001AC29C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CDF7F9BE2DB86BC7001AC29C /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		CDF7F9C02DB87D5A001AC29C /* SelectLevelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLevelVC.swift; sourceTree = "<group>"; };
+		CDF7F9C22DB87EA7001AC29C /* UIButton+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +66,12 @@
 			children = (
 				CDF7F9AA2DB86721001AC29C /* AppDelegate.swift */,
 				CDF7F9AC2DB86721001AC29C /* SceneDelegate.swift */,
-				CDF7F9AE2DB86721001AC29C /* ViewController.swift */,
+				CDF7F9C22DB87EA7001AC29C /* UIButton+Ext.swift */,
+				CDF7F9AE2DB86721001AC29C /* InitialVC.swift */,
+				CDF7F9BE2DB86BC7001AC29C /* LoginVC.swift */,
+				CD7125FE2DB8E6CB0008E3CC /* TabViewVC.swift */,
 				CDF7F9B02DB86721001AC29C /* Main.storyboard */,
+				CDF7F9C02DB87D5A001AC29C /* SelectLevelVC.swift */,
 				CDF7F9B32DB86722001AC29C /* Assets.xcassets */,
 				CDF7F9B52DB86722001AC29C /* LaunchScreen.storyboard */,
 				CDF7F9B82DB86722001AC29C /* Info.plist */,
@@ -138,9 +150,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDF7F9AF2DB86721001AC29C /* ViewController.swift in Sources */,
+				CDF7F9AF2DB86721001AC29C /* InitialVC.swift in Sources */,
 				CDF7F9AB2DB86721001AC29C /* AppDelegate.swift in Sources */,
+				CDF7F9BF2DB86BC7001AC29C /* LoginVC.swift in Sources */,
 				CDF7F9AD2DB86721001AC29C /* SceneDelegate.swift in Sources */,
+				CDF7F9C12DB87D5A001AC29C /* SelectLevelVC.swift in Sources */,
+				CD7125FF2DB8E6CB0008E3CC /* TabViewVC.swift in Sources */,
+				CDF7F9C32DB87EA7001AC29C /* UIButton+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,7 +234,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -275,7 +291,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -299,6 +315,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -326,6 +343,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
