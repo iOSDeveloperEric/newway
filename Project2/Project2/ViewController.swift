@@ -21,6 +21,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(showScoreTapped))
+        
 //        countries.append("US")
 //        countries.append("UK")
 //        countries.append("estonia")
@@ -101,5 +103,15 @@ class ViewController: UIViewController {
         }
     }
     
+    
+    @objc func showScoreTapped(){
+       
+        let text = "you score \(score)"
+        let vc = UIActivityViewController(activityItems: [text], applicationActivities: [])
+        
+        vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+        present(vc, animated: true)
+    }
+     
 }
 
