@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "9A5C8D2A-2D8A-42D3-8B90-89A035EDB547"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BF11C163-70E2-4B90-96DF-590976AAC49D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Project2/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "buttonTapped(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A18C5561-E9E4-4D82-A06D-4D1E8091AA35"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Project2/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
+            landmarkName = "showScoreTapped()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A18C5561-E9E4-4D82-A06D-4D1E8091AA35 - e659923e506bad16"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Project2.ViewController.showScoreTapped() -&gt; ()"
+                  moduleName = "Project2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rajpatel/Desktop/Learn%20Swift%20Project/Project2/Project2/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "111"
+                  endingLineNumber = "111"
+                  offsetFromSymbolStart = "212">
+               </Location>
+               <Location
+                  uuid = "A18C5561-E9E4-4D82-A06D-4D1E8091AA35 - e659923e506bad31"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Project2.ViewController.showScoreTapped() -&gt; ()"
+                  moduleName = "Project2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rajpatel/Desktop/Learn%20Swift%20Project/Project2/Project2/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "110"
+                  endingLineNumber = "110"
+                  offsetFromSymbolStart = "328">
+               </Location>
+               <Location
+                  uuid = "A18C5561-E9E4-4D82-A06D-4D1E8091AA35 - 1e4fb7de862ff79d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Project2.ViewController.showScoreTapped() -&gt; ()"
+                  moduleName = "Project2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rajpatel/Desktop/practiceProjectBeforeGitCommit/Project6a/Project2/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "110"
+                  endingLineNumber = "110"
+                  offsetFromSymbolStart = "328">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
